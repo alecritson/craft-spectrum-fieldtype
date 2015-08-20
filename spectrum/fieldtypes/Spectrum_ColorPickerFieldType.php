@@ -24,7 +24,7 @@ class Spectrum_ColorPickerFieldType extends BaseFieldType
         showInput: true,
         className: \"full-spectrum\",
         showInitial: true,
-        showPalette: true,
+        showPalette: false,
         allowEmpty:true,
         showSelectionPalette: true,
         maxSelectionSize: 10,
