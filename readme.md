@@ -2,7 +2,7 @@
 A Craft fieldtype for the jQuery color picker [Spectrum](https://bgrins.github.io/spectrum/)
 
 ### Installation
-Download the repo and copy the `specrum` folder into your plugins folder, install in the admin area.
+Download the repo and copy the `spectrum` folder into your plugins folder, install in the admin area.
 
 Once installed you will have a `Spectrum color picker` fieldtype available to use.
 
