@@ -14,7 +14,7 @@
 }
 
 .sp-container, .sp-container button, .sp-container input, .sp-color, .sp-hue, .sp-clear {
-    font-family: HelveticaNeue, sans-serif;
+    font-family: normal 13px HelveticaNeue, sans-serif; */;
 }
 .sp-container {
         

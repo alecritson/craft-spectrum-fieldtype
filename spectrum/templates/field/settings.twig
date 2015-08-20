@@ -38,6 +38,8 @@
 {{ forms.selectField({
 	label : 'Preferred format',
 	instructions : 'Selecting none will go by whatever is put into the input field, if shown',
+	name: 'preferredFormat',
+	value: settings.preferredFormat,
 	options : [
 	 { label: 'None', value: null},
 	 { label: 'HEX', value: 'hex'},
