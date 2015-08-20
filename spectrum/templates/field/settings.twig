@@ -1,0 +1,66 @@
+{% import '_includes/forms' as forms %}
+
+{{ forms.lightswitchField({
+	label: 'Allow no color',
+	name: 'allowEmpty',
+	instructions : 'Should a user be able select a <code>null</code> color?',
+	on : settings.allowEmpty
+})}}
+
+{{ forms.lightswitchField({
+	label: 'Show input',
+	name: 'showInput',
+	instructions : 'Can a user input their own color code?',
+	on : settings.showInput
+})}}
+
+{{ forms.lightswitchField({
+	label: 'Show alpha?',
+	name: 'showAlpha',
+	instructions : 'Will add a opacity slider',
+	on : settings.showAlpha
+})}}
+
+{{ forms.lightswitchField({
+	label: 'Show palette?',
+	name: 'showPalette',
+	instructions : 'Will add a palette selection to the side of the spectrum',
+	on : settings.showPalette
+})}}
+
+{{ forms.lightswitchField({
+	label: 'Only show the palette?',
+	name: 'showPaletteOnly',
+	instructions : 'Users will only be able to select from a palette of colors',
+	on : settings.showPaletteOnly
+})}}
+
+{{ forms.selectField({
+	label : 'Preferred format',
+	instructions : 'Selecting none will go by whatever is put into the input field, if shown',
+	options : [
+	 { label: 'None', value: null},
+	 { label: 'HEX', value: 'hex'},
+	 { label: 'HEX3', value: 'hex3'},
+	 { label: 'HSL', value: 'hsl'},
+	 { label: 'RGB', value: 'rgb'},
+	 { label: 'Name based', value: 'name'},
+	]
+})}}
+
+{{ forms.editableTableField({
+      label: 'Custom palette',
+      instructions : 'Add a custom palette here. Examples of values : <code>#8AD042</code>, <code>red</code>, <code>rgb(0,123,233,0.4)</code> etc',
+      id: 'palette',
+      rows: 4,
+      textual: false,
+      name: 'palette',
+      addRowLabel : 'Add color',
+      cols : {
+        'color' : {
+            'heading' : 'Key',
+            'type'   : 'singleline'
+        }
+      },
+      rows : settings.palette
+    }) }}

@@ -10,7 +10,7 @@ class SpectrumPlugin extends BasePlugin
   }
   function getVersion()
   {
-    return '0.0.1';
+    return '0.5.0';
   }
   function getDeveloper()
   {
