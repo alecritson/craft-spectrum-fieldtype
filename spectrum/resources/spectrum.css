@@ -11,3 +11,58 @@
     background-image: linear-gradient(white, #fafafa);
     border:none;
 }
+
+.sp-container {
+        background: #fff;
+    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 8px -2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 8px -2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 8px -2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin: 14px 0;
+    padding: 10px;
+    border-radius: 3px;
+    word-wrap: break-word;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    border:none;
+}
+
+.sp-container button {
+    margin-top: 10px;
+        color: #fff;
+    background-color: #da5a47;
+    background-image: none;
+    border:none;
+    font-weight: normal;
+    font-size: 13px;
+    vertical-align: middle;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    text-shadow:none;
+    padding:10px;
+}
+.sp-container button:hover {
+    text-shadow:none;
+    background-image: none;
+    border:none;
+    padding:10px;
+    background-color: #bf503f;
+}
+.sp-cancel {
+    color:#0d78f2!important;
+        margin-top: 9px;
+    display: inline-block;
+}
+.sp-cancel:hover {
+    color:#0d78f2!important;
+}
+
+.sp-color, .sp-hue, .sp-clear {
+    border:none;
+    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
