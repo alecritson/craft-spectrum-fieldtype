@@ -128,6 +128,7 @@
 .sp-palette .sp-thumb-el {
     width:20px;
     height:20px;
+    border-color: #eef0f1;
 }
 
 .sp-palette .sp-thumb-el:hover, .sp-palette .sp-thumb-el.sp-thumb-active {
