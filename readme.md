@@ -1,6 +1,8 @@
 # Craft Spectrum FieldType
 A Craft fieldtype for the jQuery color picker [Spectrum](https://bgrins.github.io/spectrum/)
 
+![Fieldtype image](http://itsalec.co.uk/assets/spectrum-ft.jpg)
+
 ### Installation
 Download the repo and copy the `spectrum` folder into your plugins folder, install in the admin area.
 
