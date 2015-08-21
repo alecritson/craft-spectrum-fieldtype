@@ -20,8 +20,7 @@ class Spectrum_ColorPickerFieldType extends BaseFieldType
         craft()->templates->includeCssResource('spectrum/spectrum-lib.css');
         craft()->templates->includeCssResource('spectrum/spectrum.css');
 
-        $settings = array();
-
+        // Get the input settings
         $inputSettings = $this->getSettings();
 
         // Start our spectrum input
@@ -30,6 +29,7 @@ class Spectrum_ColorPickerFieldType extends BaseFieldType
         $spectrum .= "color: \"" . $value . "\",";
 
         $spectrum .= "chooseText : " . "\"". Craft::t('Set color') . "\",";
+
         foreach($inputSettings as $key => $value)
         {
             if($value)
