@@ -43,7 +43,7 @@ You can also check if a colour is light, good if you need to swap between light 
 ```
 
 ### Twig extensions
-The spectrum has a couple of cool twig filters you can use as well, if you want darken or lighten a color (again these will only work with hex values)
+The field type has a couple of cool twig filters you can use as well, if you want darken or lighten a color (again these will only work with hex values)
 
 The value is the number of steps between `-255` (to black) and `255` (to white)
 
@@ -54,7 +54,7 @@ The value is the number of steps between `-255` (to black) and `255` (to white)
 {% entry.color|lighten(205) %}
 
 {# Accepts a negative number, result is #000032 #}
-{% entry.color|darken(205) %}
+{% entry.color|darken(-205) %}
 
 {# Accepts either a positive or negative number #}
 {% entry.color|brightness(155) %}
