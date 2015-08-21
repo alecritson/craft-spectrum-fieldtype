@@ -20,4 +20,9 @@ class SpectrumPlugin extends BasePlugin
   {
     return 'http://itsalec.co.uk';
   }
+  public function addTwigExtension()
+  {
+      Craft::import('plugins.spectrum.twigextensions.SpectrumTwigExtension');
+      return new SpectrumTwigExtension();
+  }
 }

@@ -67,6 +67,13 @@ class Spectrum_ColorPickerFieldType extends BaseFieldType
         return craft()->templates->render('spectrum/field/settings', array(
             'settings' => $this->getSettings()
         ));
+    }  
+
+    public function prepValue($value)
+    {
+        $model = new Spectrum_ColorModel();
+        $model->color = $value;
+        return $model;
     }
 
     protected function defineSettings()
