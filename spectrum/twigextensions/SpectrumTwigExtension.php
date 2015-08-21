@@ -15,6 +15,7 @@ class SpectrumTwigExtension extends \Twig_Extension
     public function getFilters()
     {
         $returnArray = array();
+        
         $methods = array(
             'lighten',
             'darken',
@@ -28,6 +29,12 @@ class SpectrumTwigExtension extends \Twig_Extension
         return $returnArray;
     }
 
+    /**
+     * Adjusts the lightness of a colour
+     * @param  String $hex   The base colour to work with
+     * @param  String $steps The number of steps between 225 and 0
+     * @return String        The resulting colour
+     */
     public function lighten($hex, $steps)
     {
         if ($steps < 0)
@@ -37,6 +44,12 @@ class SpectrumTwigExtension extends \Twig_Extension
         return $this->adjustBrightness($hex, $steps);
     }
 
+    /**
+     * Adjusts the darkness of a colour
+     * @param  String $hex   The base colour to work with
+     * @param  String $steps The number of steps between -225 and 0
+     * @return String        The resulting colour
+     */
     public function darken($hex, $steps)
     {
         if($steps > 0) {
@@ -45,10 +58,26 @@ class SpectrumTwigExtension extends \Twig_Extension
         return $this->adjustBrightness($hex, $steps);
     }
 
+    /**
+     * Adjusts the brightness of a colour
+     * @param  String $hex   The base colour to work with
+     * @param  String $steps The number of steps between -225 and 255
+     * @return String        The resulting colour
+     */
     public function brightness($hex, $steps)
     {
         return $this->adjustBrightness($hex, $steps);
     }
+
+    // Private methods
+    // =============================================================================
+
+    /**
+     * Actually performs the conversion
+     * @param  String $hex   The base colour to work with
+     * @param  String $steps The number of steps between -225 and 255
+     * @return String        The resulting colour
+     */
     private function adjustBrightness($hex, $steps) {
 
         // Steps should be between -255 and 255. Negative = darker, positive = lighter
