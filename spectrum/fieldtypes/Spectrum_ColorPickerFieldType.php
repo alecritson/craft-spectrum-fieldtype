@@ -30,14 +30,14 @@ class Spectrum_ColorPickerFieldType extends BaseFieldType
 
         $spectrum .= "chooseText : " . "\"". Craft::t('Set color') . "\",";
 
-        foreach($inputSettings as $key => $value)
+        foreach($inputSettings as $key => $setting)
         {
-            if($value)
+            if($setting)
             {
                 if($key == 'palette')
                 {
                     $colors = '[';
-                    foreach($value as $color)
+                    foreach($setting as $color)
                     {
                         $colors .= "\"{$color['color']}\"" . ",";
                     }
@@ -46,7 +46,7 @@ class Spectrum_ColorPickerFieldType extends BaseFieldType
                 }
                 else
                 {
-                    $spectrum .= $key . ": \"" . $value . "\",";
+                    $spectrum .= $key . ": \"" . $setting . "\",";
                 }
             }
         }
