@@ -22,6 +22,12 @@ class Spectrum_ColorPickerFieldType extends BaseFieldType
 
         // Get the input settings
         $inputSettings = $this->getSettings();
+        
+		if ($this->isFresh()) :
+		
+			$value = $this->getSettings()->defaultColor;
+
+		endif;
 
         // Start our spectrum input
         $spectrum = "$('#{$namespacedId}').spectrum({";
@@ -79,6 +85,7 @@ class Spectrum_ColorPickerFieldType extends BaseFieldType
     protected function defineSettings()
     {
         return array(
+	        'defaultColor' => AttributeType::String,
             'palette' => AttributeType::Mixed,
             'allowEmpty' => AttributeType::Bool,
             'showInput' => AttributeType::Bool,
