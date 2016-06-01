@@ -50,19 +50,28 @@
 	]
 })}}
 
+{% if defaultPalette %}
+	{{ forms.lightswitchField({
+		label: 'Use default palette?',
+		name: 'useDefaultPalette',
+		instructions : 'Should the palette colors be merged with the plugin defaults',
+		on : settings.useDefaultPalette
+	})}}
+{% endif %}
+
 {{ forms.editableTableField({
-      label: 'Custom palette',
-      instructions : 'Add a custom palette here. Examples of values : <code>#8AD042</code>, <code>red</code>, <code>rgb(0,123,233,0.4)</code> etc',
-      id: 'palette',
-      rows: 4,
-      textual: false,
-      name: 'palette',
-      addRowLabel : 'Add color',
-      cols : {
-        'color' : {
-            'heading' : 'Key',
-            'type'   : 'singleline'
-        }
-      },
-      rows : settings.palette
-    }) }}
+  label: 'Custom palette',
+  instructions : 'Add a custom palette here Examples of values : <code>#8AD042</code>, <code>red</code>, <code>rgb(0,123,233,0.4)</code> etc',
+  id: 'palette',
+  rows: 4,
+  textual: false,
+  name: 'palette',
+  addRowLabel : 'Add color',
+  cols : {
+    'color' : {
+        'heading' : 'Key',
+        'type'   : 'singleline'
+    }
+  },
+  rows : settings.palette
+}) }}

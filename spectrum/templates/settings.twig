@@ -1,0 +1,18 @@
+{% import '_includes/forms' as forms %}
+
+{{ forms.editableTableField({
+      label: 'Default palette',
+      instructions : 'Add a custom palette here. Examples of values : <code>#8AD042</code>, <code>red</code>, <code>rgb(0,123,233,0.4)</code> etc',
+      id: 'palette',
+      rows: 4,
+      textual: false,
+      name: 'palette',
+      addRowLabel : 'Add color',
+      cols : {
+        'color' : {
+            'heading' : 'Key',
+            'type'   : 'singleline'
+        }
+      },
+      rows : settings.palette
+    }) }}

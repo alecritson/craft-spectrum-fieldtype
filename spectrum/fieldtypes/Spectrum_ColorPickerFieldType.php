@@ -30,19 +30,33 @@ class Spectrum_ColorPickerFieldType extends BaseFieldType
 
         $spectrum .= "chooseText : " . "\"". Craft::t('Set color') . "\",";
 
+        $colors = '[';
+
         foreach($inputSettings as $key => $setting)
         {
             if($setting)
             {
-                if($key == 'palette')
+                if($key == 'palette' || $key == 'useDefaultPalette')
                 {
-                    $colors = '[';
-                    foreach($setting as $color)
+                    
+
+                    if($key == 'useDefaultPalette')
                     {
-                        $colors .= "\"{$color['color']}\"" . ",";
+                        $plugin = craft()->plugins->getPlugin('spectrum');
+                        if($defaultPalette = $plugin->getSettings()->getAttribute('palette'))
+                        {
+                            foreach ($defaultPalette as $color) {
+                                $colors .= "\"{$color['color']}\"" . ",";
+                            }
+                        }
                     }
-                    $colors .= ']';
-                    $spectrum .= "palette: [" . $colors . "],";
+                    if($key == 'palette')
+                    {
+                        foreach($setting as $color)
+                        {
+                            $colors .= "\"{$color['color']}\"" . ",";
+                        }
+                    }
                 }
                 else
                 {
@@ -50,6 +64,9 @@ class Spectrum_ColorPickerFieldType extends BaseFieldType
                 }
             }
         }
+
+        $colors .= ']';
+        $spectrum .= "palette: [" . $colors . "],";
 
         $spectrum .= "});";
 
@@ -64,7 +81,9 @@ class Spectrum_ColorPickerFieldType extends BaseFieldType
 
     public function getSettingsHtml()
     {
+        $plugin = craft()->plugins->getPlugin('spectrum');
         return craft()->templates->render('spectrum/field/settings', array(
+            'defaultPalette' => $plugin->getSettings()->getAttribute('palette'),
             'settings' => $this->getSettings()
         ));
     }  
@@ -85,6 +104,7 @@ class Spectrum_ColorPickerFieldType extends BaseFieldType
             'showAlpha' => AttributeType::Bool,
             'showPalette' => AttributeType::Bool,
             'showPaletteOnly' => AttributeType::Bool,
+            'useDefaultPalette' => AttributeType::Bool,
             'preferredFormat' => AttributeType::String
         );
     }
