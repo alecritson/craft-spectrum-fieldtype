@@ -38,8 +38,6 @@ class Spectrum_ColorPickerFieldType extends BaseFieldType
             {
                 if($key == 'palette' || $key == 'useDefaultPalette')
                 {
-                    
-
                     if($key == 'useDefaultPalette')
                     {
                         $plugin = craft()->plugins->getPlugin('spectrum');
@@ -75,6 +73,7 @@ class Spectrum_ColorPickerFieldType extends BaseFieldType
         return craft()->templates->render('spectrum/field/input', array(
             'name'  => $name,
             'id' => $id,
+            'defaultColor' => $inputSettings->defaultColor,
             'value' => $value
         ));
     }
@@ -102,6 +101,7 @@ class Spectrum_ColorPickerFieldType extends BaseFieldType
             'allowEmpty' => AttributeType::Bool,
             'showInput' => AttributeType::Bool,
             'showAlpha' => AttributeType::Bool,
+            'defaultColor' => array(AttributeType::String, 'default' => null),
             'showPalette' => AttributeType::Bool,
             'showPaletteOnly' => AttributeType::Bool,
             'useDefaultPalette' => AttributeType::Bool,

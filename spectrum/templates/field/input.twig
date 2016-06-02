@@ -1,1 +1,2 @@
-<input type='text' id="{{ id }}" name="{{ name }}" value="{{ value }}"/>
+{%- set color = value != '' ? value : (defaultColor ?: '#000') -%}
+<input type='text' id="{{ id }}" name="{{ name }}" value="{{ color }}"/>

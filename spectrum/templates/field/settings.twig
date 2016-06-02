@@ -1,5 +1,6 @@
 {% import '_includes/forms' as forms %}
 
+
 {{ forms.lightswitchField({
 	label: 'Allow no color',
 	name: 'allowEmpty',
@@ -48,6 +49,13 @@
 	 { label: 'RGB', value: 'rgb'},
 	 { label: 'Name based', value: 'name'},
 	]
+})}}
+
+{{ forms.textField({
+	label: 'Default color'|t,
+	instructions: 'Set what color should be picked initially',
+	name: 'defaultColor',
+	value: settings.defaultColor
 })}}
 
 {% if defaultPalette %}
